@@ -1,0 +1,32 @@
+<div class="main">
+    <h2 class="tittle">Adicionar nova noticia</h2>
+
+    <div class="row">
+        <form>
+            <div class="div-tittle">
+                <mat-form-field class="form-field-tittle" appearance="outline">
+                    <mat-label>Titulo</mat-label>
+                    <input type="text" matInput [formControl]="tittleFormControl" placeholder="Digite um titulo" >
+                    <mat-error *ngIf="tittleFormControl.hasError('required')"> 
+                        Campo <strong>obrigatório</strong> !
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="div-content">
+                <mat-form-field class="form-field-content" appearance="outline">
+                    <mat-label>Conteúdo</mat-label>
+                    <textarea type="text" matInput [formControl]="contentFormControl" placeholder="Digite um titulo" ></textarea>
+                    <mat-error *ngIf="contentFormControl.hasError('required')"> 
+                        Campo <strong>obrigatório</strong> !
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+
+    <div class="div-button">
+        <button mat-raised-button color="primary" class="buttonCloseModal" (click)="close()">CANCELAR</button>
+        <button mat-raised-button color="primary" class="buttonConfirmCad" type="submit" (click)="sendFormatingData()">ADICIONAR</button>
+    </div>
+</div>
